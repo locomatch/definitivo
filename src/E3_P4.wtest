@@ -3,8 +3,6 @@ import rolando.*
 describe "Punto 4"{
 
 	var pastoriza = new Comerciante(new Independiente(9))
-	var prieto = new Comerciante(registrado)
-	var fermepin = new Comerciante(impuestoALasGanancias)
 	var ursula = new Guerrero(hechizoBasico,100,200)
 	var mascaraOscura = new Mascara(25,3)
 	
@@ -13,10 +11,9 @@ fixture{
 }	
 
 test "Ursula compra mascara oscura" {
+	ursula.comprarArtefacto(mascaraOscura,pastoriza)
+	assert.equals(89.1,ursula.oro())
 
-	assert.equals(89.1,ursula.comprarArtefacto(mascaraOscura,pastoriza))
-
-/*comentario */
 }
 
 

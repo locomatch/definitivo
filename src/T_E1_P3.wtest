@@ -11,7 +11,7 @@ describe "Punto 3"{
 	var collarDivino = new CollarDivino(50,1)
 		
 
-	var libroDeHechizos = new LibroDeHechizos(espectroMalefico)
+	var libroDeHechizos = new LibroDeHechizos([espectroMalefico])
 	var bendicion = new Bendicion()
 	var cotaDeMalla = new CotaDeMalla(1)
 	var hechizoArmadura = new HechizoArmadura(cotaDeMalla)

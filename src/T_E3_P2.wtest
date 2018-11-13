@@ -70,7 +70,7 @@ describe "Punto 2"{
     	assert.equals(5,merlin.pesoActual())
     }
     test "Merlin le quiere comprar a Mock Hnos. la armadura con hechizo par"{
-    	assert.notThat(merlin.comprarArtefacto(armaduraHechizoPar,mock))
+    	assert.throwsException{merlin.comprarArtefacto(armaduraHechizoPar,mock)}
     }
 	test "Saber peso de Ursula luego de quitarse la armadura con cota de malla"{
 		ursula.eliminarArtefacto(armadura)

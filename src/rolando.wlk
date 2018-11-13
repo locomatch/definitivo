@@ -202,11 +202,13 @@ class Npc inherits Guerrero{
 	}
 	
 	override method nivelDeLucha(){
-		return ( valorBaseLucha + artefactos.sum({artef => artef.lucha()}) * multiplicadorDificultad )
+		return super() * multiplicadorDificultad 
 	}
 	method cambiar(_nivelDePersonaje){
 		nivelDePersonaje = _nivelDePersonaje
-		
+		if (nivelDePersonaje == "facil")    multiplicadorDificultad = 1
+		if (nivelDePersonaje == "moderado") multiplicadorDificultad = 2
+		if (nivelDePersonaje == "dificil")  multiplicadorDificultad = 4
 	}
 }
 
@@ -376,7 +378,7 @@ class Armadura inherits Artefactos{
 		return base + refuerzo.aportar()
 	}
 	method valor(){
-		return refuerzo.pesoRefuerzo()
+		return refuerzo.valor() 
 	}
 }
 
@@ -402,7 +404,7 @@ class CotaDeMalla inherits Refuerzos{
 	}
 	
 	method valor(){
-		return self.aportar()/2
+		return numero/2
 	}
 	
 	override method pesoRefuerzo(){
@@ -433,7 +435,7 @@ class HechizoArmadura inherits Refuerzos{
 	}
 	
 	method valor(){
-		return refuerzoDe.base() + hechizoSeleccionado.valor()
+		return hechizoSeleccionado.valor() + 2
 	}
 	
 	override method pesoRefuerzo(){
@@ -458,14 +460,14 @@ object ninguno inherits Refuerzos{
 
 class LibroDeHechizos{
 	var property duenio 
-	var property hechizos = new List()
+	var property hechizos
 	
 	constructor (_hechizos) {
- 		hechizos.add(_hechizos)
+ 		hechizos=_hechizos
  	}
 
 	method esPoderoso(){
-		return hechizos.esPoderoso()
+		return hechizos.any{hechizo=>hechizo.esPoderoso()}
 	}
 
 	method poder(){

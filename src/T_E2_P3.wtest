@@ -9,7 +9,7 @@ describe "Punto 3"{
 	var mascaraOscura = new Mascara(25, 3)
 	var armadura = new Armadura(30, 1)
 	
-	var libroDeHechizos = new LibroDeHechizos(espectroMalefico)
+	var libroDeHechizos = new LibroDeHechizos([espectroMalefico])
 	var bendicion = new Bendicion()
 	var cotaDeMalla = new CotaDeMalla(4)
 	var hechizoArmadura = new HechizoArmadura(null)
