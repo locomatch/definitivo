@@ -2,7 +2,7 @@ import rolando.*
 
 describe "Punto 2"{
 	
-	var espadaVieja = new Arma(7, 7/05/2016) // duda si poner new Date(7,05,2016) 
+	var espadaVieja = new Arma(7, new Date(7,05,2016)) // duda si poner new Date(7,05,2016) 
 											 //o poner solo el numero de dia
 	var espadaNueva = new Arma(4,0)
 	var espadaComun = new Arma(5,50)

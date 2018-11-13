@@ -3,6 +3,7 @@ import rolando.*
 describe "Punto 4"{
 
 	var pastoriza = new Comerciante(new Independiente(9))
+	var prieto = new Comerciante(registrado)
 	var ursula = new Guerrero(hechizoBasico,100,200)
 	var mascaraOscura = new Mascara(25,3)
 	
@@ -10,11 +11,18 @@ fixture{
 	impuestoALasGanancias.cambiarMni(5) // agregue este metodo en rolando.wlk
 }	
 
-test "Ursula compra mascara oscura" {
+test "Ursula compra mascara oscura a Pastoriza"{
 	ursula.comprarArtefacto(mascaraOscura,pastoriza)
 	assert.equals(89.1,ursula.oro())
 
 }
+
+test "Ursula compra mascara oscura a Prieto"{
+	ursula.comprarArtefacto(mascaraOscura,prieto)
+	assert.equals(87.9,ursula.oro())
+}
+
+test 
 
 
 

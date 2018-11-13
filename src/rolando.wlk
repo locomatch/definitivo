@@ -329,10 +329,6 @@ class CollarDivino inherits Artefactos{
 class Mascara inherits Artefactos{
 	var property oscuridad = 1
 	var property minimo = 4
-	
-   
-    
-    
 
 	override method pesoTotal(){
 		var auxiliar = (self.lucha() - 3)
